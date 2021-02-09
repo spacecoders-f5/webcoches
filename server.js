@@ -3,7 +3,7 @@
 const morgan = require("morgan");
 const express = require ("express");
 const exphbs = require ("express-handlebars");
-const userRouter = require("./routes/usersRoutes");
+const userRouter = require("./routes/users.routes");
 const indexRouter = require('./routes/index.routes')
 const carRouter = require('./routes/cars.routes')
 

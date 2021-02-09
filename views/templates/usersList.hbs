@@ -1,0 +1,13 @@
+{{#each usersList}}
+    <article>
+        <img src="{{this.avatar}}" alt="">
+        <ul>
+            <h3>Nombre: {{this.name}} {{this.surname}}</h3>
+            <li>Dni: {{this.dniNumber}}</li>
+            <li>Nombre de usuario: {{this.userName}}</li>
+            <li>Password: {{this.password}}</li>
+            <li>Email: {{this.email}}</li>
+            <li>Tipo de membresía: {{this.membresia}}</li>
+        </ul>
+    </article>
+{{/each}}

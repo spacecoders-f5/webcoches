@@ -26,7 +26,7 @@ usersController.newUser = (req, res) => {
 
 usersController.usersList = (req, res) => {
     User.find().lean()
-        .then(allUsers => res.json(allUsers))
+        .then(allUsers => res.render('templates/usersList',{usersList: allUsers}) )
         .catch(error => console.error(`Error en CRUD usersList: ${error}`));
 };
 
@@ -34,7 +34,7 @@ usersController.findUserById = (req, res) => {
     const idBusqueda = req.params.id;
     if (req.params.id) {
         User.findById({ _id: idBusqueda }).lean().
-            then(user => res.json(user)).
+            then(user => res.render('templates/detailsUser', {userDetails: user})).
             catch(error => console.error(`Error en CRUD findUserrById.findbyId: ${error}`));
         return
     };
