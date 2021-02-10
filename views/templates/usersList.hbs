@@ -1,6 +1,6 @@
 {{#each usersList}}
     <article>
-        <img src="{{this.avatar}}" alt="">
+        <img class="imgUser" src="{{this.avatar}}" alt="">
         <ul>
             <h3>Nombre: {{this.name}} {{this.surname}}</h3>
             <li>Dni: {{this.dniNumber}}</li>
@@ -9,6 +9,13 @@
             <li>Email: {{this.email}}</li>
             <li>Tipo de membresía: {{this.membresia}}</li>
         </ul>
-        <a href='/userById/{{this._id}}'>Ver usuario</a>
+        <form action="/userById/{{this._id}}" method="GET">
+            <button type="submit">Ver usuario</button>
+        </form>
+        <form action="/deletedUserById/{{this._id}}" method="GET">
+            <button type="submit">Borrar</button>
+        </form>
+        
+
     </article>
 {{/each}}

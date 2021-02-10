@@ -15,10 +15,10 @@ usersController.newUser = (req, res) => {
     newUser.save(error => {
             if (error) {
                 console.error(`Error en usersController.newUser.save: ${error}`);
-                res.redirect("/newUser")
+                res.redirect("/newUser",{error:"error"})
                 return
             };
-            res.redirect("/userById/" + newUser._id);
+            res.redirect("/listadoUsers");
             return
     });
 };
@@ -43,14 +43,10 @@ usersController.findUserById = (req, res) => {
 
 
 usersController.deleteUserById = (req, res) => {
-    const idBusqueda = req.param.id;
-    if (req.params.id) {
-        User.findByIdAndDelete({ _id: idBusqueda }).lean().
-            then(user => res.json(user)).
+    const idBusqueda = req.params.id;
+        User.findByIdAndDelete({ _id: idBusqueda }).
+            then(user => res.redirect('/listadoUsers')).
             catch(error => console.log(`Error en CRUD deleteUserById: ${error}`));
-        return
-    };
-    res.send("Borrado por ID");
 };
 
 
