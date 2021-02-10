@@ -57,7 +57,7 @@ usersController.deleteUserById = (req, res) => {
 usersController.updateUserById = (req, res) => {
     const { name, surname, userName, password, email, avatar } = req.body;
     User.findOneAndUpdate({ _id: req.params.id }, { name, surname, userName, password, email, avatar }, { new: true }).lean()
-        .then(user => res.json(user))
+        .then(user => res.redirect(`/listadoUsers`))
         .catch(error => console.log(`Error en CRUD updateUserById: ${error}`));
 
 };

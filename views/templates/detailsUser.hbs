@@ -1,33 +1,32 @@
 {{#if userDetails}}
-<form action="/updateUser" method="post" id="formUpdateUser">
+<form action="/updatedUserById/{{userDetails._id}}" method="post" id="formNewUser">
     <fieldset>
-        {{>atoms/legend texto="Datos personales"}}
+        <legend>Datos personales</legend>
 
-        {{>atoms/label labelFor="name" text="Nombre:" }}
-        {{>atoms/input inputId="name"  type="text" inputName="name" inputPlaceholder="Nombre" required="required" inputValue="{{this.name}}"}}
-        <span>{{name}}</span>{{_id}}
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required autofocus maxlength="15" value="{{userDetails.name}}">
 
-        {{>atoms/label labelFor="surname" text="Apellidos:"}}
-        {{>atoms/input inputId="surname" type="text" inputName="surname" inputPlaceholder="Apellidos" required="required"}}
+        <label for="surname">Apellidos:</label>
+        <input type="text" id="surname" name="surname" placeholder="Apellidos" required maxlength="30" value="{{userDetails.surname}}">
     </fieldset>
     <fieldset>
-        {{>atoms/legend texto="Datos login"}}
+        <legend>Datos login</legend>
 
-        {{>atoms/label labelFor="userName" text="Nombre de usuario:"}}
-        {{>atoms/input inputId="userName" inputId="userNameId" type="text" inputName="userName" inputPlaceholder="Nombre de usuario" required="required"}}
+        <label for="userName">Nombre de usuario:</label>
+        <input type="text" id="userName" name="userName" placeholder="Nombre de usuario" required maxlength="15" value="{{userDetails.userName}}">
 
-        {{>atoms/label labelFor="password" text="Contraseña:"}}
-        {{>atoms/input inputId="password" inputType="password" inputName="password" inputPlaceholder="Contraseña" inputMinLength = "6" required="required"}}
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required minlength="6" value="{{userDetails.password}}">
 
-        {{>atoms/label labelFor="avatar" text="Avatar:"}}
-        {{>atoms/input inputId="avatar" type="file" inputName="avatar"}}
+        <label for="avatar">Avatar:</label>
+        <input type="file" id="avatar" name="avatar" value="{{userDetails.avatar}}">
     </fieldset>
     <fieldset>
-        {{>atoms/legend texto="Datos contacto"}}
+        <legend>Datos contacto</legend>
 
-        {{>atoms/label labelFor="email" text="Correo electrónico"}}
-        {{>atoms/input inputId="email" type="email" inputName="email" inputPlaceholder="Correo electrónico" required="required"}}
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Correo electrónico" required value="{{userDetails.email}}">
     </fieldset>
-    {{>atoms/button btnId="btnForm" btnType="submit" btnValue="Crear usuario"}}  
+    <button id="btnForm" type="submit" value="Crear usuario">Guardar cambios</button> 
 </form>
 {{/if}}
