@@ -28,5 +28,4 @@ app.use(userRouter);
 app.use(indexRouter);
 app.use('/usedCars', carRouter);
 
-app.use(express.static("public"));
 module.export = app;
