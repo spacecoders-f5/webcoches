@@ -7,7 +7,7 @@
             "id":"carBrand",
             "name":"carBrand",
             "value":"",
-            "required":true
+            "required":false
         },
 
         {
