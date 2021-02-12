@@ -45,16 +45,25 @@
             font-size: 14px;
             color: var(--whiteColor);
         }
+.mainUsedCars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .carsList{
     width: 100vw;
+    max-width: 300px;
     border: solid 5px black;
     font-weight: var(--body);
     font-size: 18px;    
 }
 
-    .carList ul{
+    .carsList ul{
         padding: 0 2vw;
+        list-style: none;
+        
     }
-        .carsList ul img{
+        .carsList img{
             width: 100%;
         }

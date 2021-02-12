@@ -10,5 +10,6 @@ const carController = require('../controllers/car.controller');
     router.post('/usedCars/createUsedCar', carController.createUsedCar);
     router.get('/usedCarCatalog', carController.list);
     router.get('/usedCars/delete/:id', carController.deleteCar);
+    router.get('/usedCars/details/:id', carController.details);
 
 module.exports = router;
