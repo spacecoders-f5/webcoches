@@ -33,4 +33,21 @@ carController.details = async (req, res) =>{
     res.render('templates/usedCars/usedCarDetails',{car})
 };
 
+carController.renderUpdate = async (req,res) => {
+    const car = await Car.findById(req.params.id)
+    res.render('templates/usedCars/editCar', car)
+}
+
+carController.editCar = async (req, res) => {
+    const id = req.params.id;
+    const { carBrand, carModel, modelYear, nextItvDate, sellingPrice, carImage, carColor, seatsNumber, doorNumber, transmissionType, motorType} = req.body;
+    await Car.findOneAndUpdate({ _id: id }, { carBrand, carModel, modelYear, nextItvDate, sellingPrice, carImage, carColor, seatsNumber, doorNumber, transmissionType, motorType}, { new: true });
+    res.redirect('/usedCarCatalog')
+    
+    /*  .then(nCar => res.redirect('/usedCarCatalog')) */
+        // .then(car => res.json(car))
+       /*  .catch(error => console.log(`Error en CRUD editCar: ${error}`)); */
+
+};
+
 module.exports = carController;
