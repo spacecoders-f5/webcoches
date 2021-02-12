@@ -91,6 +91,10 @@
             "name":"motorType",
             "value":"",
             "required":true
+        },
+        {
+            "type": "submit",
+            "value":"Crear Anuncio"
         }
 
     ]
