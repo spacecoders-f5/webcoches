@@ -5,7 +5,7 @@ const Car = require('../models/Car');
 const carController = {};
 
 carController.formCreateUsedCar = (req, res) => { 
-    res.render('templates/formUsedCar',{formNewUsedCars:input.formNewUsedCars})  
+    res.render('templates/usedCars/formUsedCar',{formNewUsedCars:input.formNewUsedCars})  
 };
 carController.createUsedCar = async (req, res) =>{ 
     let {carBrand, carModel, modelYear, nextItvDate, sellingPrice, carImage, carColor, seatsNumber, doorNumber, transmissionType, motorType} = req.body; 
@@ -20,12 +20,12 @@ carController.createUsedCar = async (req, res) =>{
 carController.list = async (req,res)=>{
 
     const cars = await Car.find({}).lean();
-    res.render('templates/allUsedCarsTemplate',{carList:cars});
+    res.render('templates/usedCars/allUsedCarsTemplate',{carList:cars});
 };
 
 carController.deleteCar = async (req,res) => { 
     await Car.findByIdAndDelete(req.params.id) 
-    res.redirect('/usedCarCatalog') 
+    res.redirect('/usedCars/usedCarCatalog') 
 };
 
 carController.details = async (req, res) =>{

@@ -3,7 +3,7 @@ const router = Router();
 
 router.get('/',(req,res)=>{
 
-    res.render('templates/allUsedCarsTemplate');
+    res.redirect('/usedCars/usedCarCatalog');
 
 })
 

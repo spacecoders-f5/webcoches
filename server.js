@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(userRouter);
 app.use(indexRouter);
-app.use(carRouter);
+app.use('/usedCars', carRouter);
 
 app.use(express.static("public"));
 module.export = app;
