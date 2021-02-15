@@ -42,7 +42,7 @@ carController.editCar = async (req, res) => {
     const id = req.params.id;
     const { carBrand, carModel, modelYear, nextItvDate, sellingPrice, carImage, carColor, seatsNumber, doorNumber, transmissionType, motorType} = req.body;
     await Car.findOneAndUpdate({ _id: id }, { carBrand, carModel, modelYear, nextItvDate, sellingPrice, carImage, carColor, seatsNumber, doorNumber, transmissionType, motorType}, { new: true });
-    res.redirect('/usedCarCatalog')
+    res.redirect('/usedCars/usedCarCatalog')
     
     /*  .then(nCar => res.redirect('/usedCarCatalog')) */
         // .then(car => res.json(car))
