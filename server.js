@@ -3,7 +3,7 @@
 const morgan = require("morgan");
 const express = require ("express");
 const exphbs = require ("express-handlebars");
-const userRouter = require("./routes/usersRoutes");
+const userRouter = require("./routes/users.routes");
 const indexRouter = require('./routes/index.routes')
 const carRouter = require('./routes/cars.routes')
 
@@ -26,7 +26,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(userRouter);
 app.use(indexRouter);
-app.use(carRouter);
+app.use('/usedCars', carRouter);
 
-app.use(express.static("public"));
 module.export = app;
