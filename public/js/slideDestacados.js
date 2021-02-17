@@ -9,17 +9,48 @@ const Cars = require("../../models/Car.js");
 const findAllCars = ()=> {
     Cars.find({}).lean()
     .then(allCars=>{
-         return allCars;
+         return allCars.lenght;
         })
     .catch(error=>{console.error(`el error es:${error}`)});
 };
  
 //Después necesitaremos generar 3 números aleatorios entre 0 y la longitud del array -1
 
-const randomCars = async _=> {
-    const arrayCars = await findAllCars()
-    const arrayCarsLength = arrayCars.length;
-    const num = Math.random()*arrayCarsLength;
-    console.log(num);
-}
-randomCars();
+const prueba = () =>{
+    Cars.find({}).lean()
+    .then(carsAll => {
+        const carsAllLength = Object.keys(carsAll).length;
+        // console.log(`Todos:\n ${carsAll}`);
+        // console.log(Object.entries(carsAll)[0]);
+        console.log(`La longitud es: ${carsAllLength}`);
+        let arrayNum = [];
+        let num='';
+        for(let i=0; i<3; i++){
+            
+            do{
+                 num = Math.floor(Math.random()*carsAllLength);
+            }while(arrayNum.includes(num));
+
+            console.log(`El número random es : ${num}`);
+            arrayNum.push(num);
+            console.log(`ArrayNum : ${arrayNum}`);
+        }
+        let arrayAnu = [];
+        for (const num of arrayNum) {
+            arrayAnu.push(Object.entries(carsAll)[num])
+        };
+        console.log(`Los elemetos seleccionados son:\n ${arrayAnu}`);
+    });
+};
+prueba();
+// const allCarsLength = allCars.length;
+// console.log(allCarsLength);
+
+
+// const randomCars = ()=> {
+//     findAllCars()
+//     .then(cars =>{console.log(cars.length)})
+//     .catch(e => console.error(e));
+    
+// }
+// randomCars();
