@@ -13,5 +13,7 @@ const carController = require('../controllers/car.controller');
     router.get('/edit/:id', carController.renderUpdate);
     router.post('/edit/:id', carController.editCar);
     router.get('/details/:id', carController.details);
+    router.get('/slider', (req, res)=>{
+               res.render('templates/slider') });
 
-module.exports = router;
+    module.exports = router;
