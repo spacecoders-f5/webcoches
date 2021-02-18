@@ -24,7 +24,7 @@ const carsLength = async () => {
     return carsLength
 };
 
-// imprimir(carsLength());
+//imprimir(carsLength());
 
 const generarRamdon = async () => {
     const limit = await carsLength();
@@ -52,8 +52,8 @@ const generoArray3Ramdon = async () =>{
 //Por último haremos un return de esos elementos.
 
 const arrayAd = async () =>{
-    const allCars = await findAllCars(); // [{car1},{car2},{car3},{car4},...]
-    const arrayNum = await generoArray3Ramdon();//[6, 3, 2]
+    const allCars = await findAllCars();
+    const arrayNum = await generoArray3Ramdon();
     let arrayAd = [];
     for (let num of arrayNum) {
         arrayAd.push(allCars[num]);
@@ -64,32 +64,32 @@ const arrayAd = async () =>{
 //  imprimir(arrayAd());
 
 
-// const prueba = () => {
-//     Cars.find({}).lean()
-//         .then(carsAll => {
-//             let arrayNum = [];
-//             let num = '';
-//             let arrayAnu = [];
+const prueba = () => {
+    Cars.find({}).lean()
+        .then(carsAll => {
+            let arrayNum = [];
+            let num = '';
+            let arrayAnu = [];
 
-//             const carsAllLength = Object.keys(carsAll).length;
-//             for (let i = 0; i < 3; i++) {
-//                 do {
-//                     num = Math.floor(Math.random() * carsAllLength);
-//                 } while (arrayNum.includes(num));
+            const carsAllLength = Object.keys(carsAll).length;
+            for (let i = 0; i < 3; i++) {
+                do {
+                    num = Math.floor(Math.random() * carsAllLength);
+                } while (arrayNum.includes(num));
 
-//                 // console.log(`El número random es : ${num}`);
-//                 arrayNum.push(num);
-//                 // console.log(`ArrayNum : ${arrayNum}`);
-//             }
-//             for (const num of arrayNum) {
-//                 arrayAnu.push(carsAll[num]);
-//             };
-//             // console.log(`Los elemetos seleccionados son:\n ${arrayAnu}`);
-//             // console.log("El segundo elemento es:")
-//             // console.log(arrayAnu[2])
-//             return arrayAnu
-//         });
-// };
+                // console.log(`El número random es : ${num}`);
+                arrayNum.push(num);
+                // console.log(`ArrayNum : ${arrayNum}`);
+            }
+            for (const num of arrayNum) {
+                arrayAnu.push(carsAll[num]);
+            };
+            // console.log(`Los elemetos seleccionados son:\n ${arrayAnu}`);
+            // console.log("El segundo elemento es:")
+            // console.log(arrayAnu[2])
+            return arrayAnu
+        });
+};
 
 
 module.exports = {arrayAd};
