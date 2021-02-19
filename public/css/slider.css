@@ -50,10 +50,34 @@ main{
 
     .slider-figure figcaption{
         display:flex;
-        justify-content: center;
         align-items: center;
-        font-size:10% ;
-        border: 10px solid red;
+        /*border: 10px solid red;*/
         width: 100%;
-        height: 25%;
+    }
+
+.a-slider-figure__price--red{
+    justify-content: center;
+    height: 12%;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: var(--secondHandColor);
+}
+
+.a-slider-figure__details{
+    height: 38%;
+    padding: 5%;
+}
+
+    .a-slider-figure__details dl{
+        display: flex;
+        flex-direction: column;
+        /*flex-wrap: wrap;*/
+
+    }.a-slider-figure__details dl div{
+        /*display: inline-block;*/
+        display: flex;
+        align-items: start;
+        width: 100%;
+        justify-content: space-between;
+        /*gap:10px;*/
     }
