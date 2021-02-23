@@ -1,23 +1,22 @@
 main{
     display: flex;
+    justify-content: center;
 }
 
 .o-slider-container{
- width: 20vw;
- max-width: 500vw;
+ max-width: 30vw;
+ min-width: 225px;
  height: 40vh;
- border: 2px solid rebeccapurple;
-
- margin: auto;
+ overflow: hidden;
+ box-shadow: 6px 4px 20px grey;
 }
 
 .m-slider{
     display: flex;
     width: 300%;
     height: 100%;
-    border: 2px solid aquamarine;
     margin-left:0%;
-    animation: slider  infinite alternate ease-in-out;
+    animation: slider 10s infinite alternate ease-in-out;
 }
 
     @keyframes slider{
@@ -29,7 +28,6 @@ main{
 .a-slider-element{
     width: 100%;
     height: 100%;
-    
 }
 
     .a-slider-element a{
@@ -51,33 +49,35 @@ main{
     .slider-figure figcaption{
         display:flex;
         align-items: center;
-        /*border: 10px solid red;*/
         width: 100%;
     }
 
 .a-slider-figure__price--red{
     justify-content: center;
-    height: 12%;
-    font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.4rem;
     background-color: var(--secondHandColor);
+    color: white;
 }
 
 .a-slider-figure__details{
     height: 38%;
-    padding: 5%;
+    padding: 4%;
+    display: flex;
+    justify-content: center;
 }
 
-    .a-slider-figure__details dl{
-        display: flex;
-        flex-direction: column;
-        /*flex-wrap: wrap;*/
-
-    }.a-slider-figure__details dl div{
-        /*display: inline-block;*/
-        display: flex;
-        align-items: start;
-        width: 100%;
-        justify-content: space-between;
-        /*gap:10px;*/
+.a-slider-figure__details dl{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3px;
     }
+    
+        .a-slider-figure__details dl dt {
+           font-weight: 600;
+           font-size: 0.8em;
+        }
+
+        .a-slider-figure__details dl dd {
+            font-size: 0.8em;
+        }
